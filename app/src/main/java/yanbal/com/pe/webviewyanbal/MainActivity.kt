@@ -36,7 +36,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
         btnWebview.setOnClickListener {
-            val url = etWebUrl.text.toString()
+//            val url = etWebUrl.text.toString()
+            val url ="http://railway.axonlogic.uz/auth/login-with-service/hgER42dd77ffF/669dcaab-a34d-4542-9c21-2c339a58327b"
+//            http://railway.axonlogic.uz/auth/login-with-service/hgER42dd77ffF/7efe0668-8159-4f77-9e2d-afa1fa633798
             if (validateUrl(url)) {
                 val intent = Intent(this, WebViewActivity::class.java).putExtra("KEY_URL", url)
                 startActivity(intent)
