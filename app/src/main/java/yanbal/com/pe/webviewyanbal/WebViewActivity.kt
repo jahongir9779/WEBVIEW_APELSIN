@@ -31,7 +31,7 @@ class WebViewActivity : AppCompatActivity() {
     private fun setupWebview() {
         val webUrl = intent.getStringExtra("KEY_URL")
         progressBar.visibility = View.VISIBLE
-        browser.loadUrl(webUrl)
+        browser.loadUrl(webUrl!!)
         browser.settings.javaScriptEnabled = true
         browser.setDownloadListener { url, userAgent, contentDisposition, mimeType, contentLength ->
             browser.loadUrl(JavaScriptInterface.getBase64StringFromBlobUrl(url))
@@ -89,6 +89,7 @@ class WebViewActivity : AppCompatActivity() {
                 arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
                 readStoragePermission)
         }
+
 
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_NOTIFICATION_POLICY)

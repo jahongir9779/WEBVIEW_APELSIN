@@ -62,7 +62,7 @@ public class JavaScriptInterface {
         final int notificationId = 1;
         String currentDateTime = DateFormat.getDateTimeInstance().format(new Date());
         final File dwldsPath = new File(Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_DOWNLOADS) + "/YourFileName_" + currentDateTime + "_.pdf");
+                Environment.DIRECTORY_DOWNLOADS) + "YourFileName.pdf");
         byte[] pdfAsBytes = Base64.decode(base64PDf.replaceFirst("^data:application/pdf;base64,", ""), 0);
         FileOutputStream os;
         os = new FileOutputStream(dwldsPath, false);
